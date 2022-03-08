@@ -1,0 +1,85 @@
+{
+  "users": [
+    {
+      "id": "23",
+      "firstName": "Roxane",
+      "age": "46",
+      "companyId": "3",
+      "purchasedProducts": [
+        "620409805e8b18ef09879ea5",
+        "6206ab3ce5229e026117234b"
+      ]
+    },
+    {
+      "id": "44",
+      "firstName": "Cali",
+      "age": "60",
+      "companyId": "2",
+      "purchasedProducts": []
+    },
+    {
+      "firstName": "Alana",
+      "age": 39,
+      "id": "32",
+      "companyId": "2",
+      "purchasedProducts": [
+        "620409805e8b18ef09879ea5",
+        "6206ab3ce5229e026117234b"
+      ]
+    },
+    {
+      "firstName": "Julia",
+      "age": 40,
+      "id": "xwt8ETV",
+      "companyId": "3",
+      "purchasedProducts": []
+    },
+    {
+      "firstName": "John",
+      "age": 30,
+      "id": "Asv0Z1P",
+      "companyId": "3",
+      "purchasedProducts": []
+    },
+    {
+      "firstName": "Carl",
+      "age": 43,
+      "id": "2q41o13",
+      "companyId": "3",
+      "purchasedProducts": []
+    },
+    {
+      "firstName": "Olivia",
+      "age": 23,
+      "id": "6iEvx1K",
+      "companyId": "1"
+    },
+    {
+      "firstName": "Willow",
+      "age": 5,
+      "id": "bHZZvkE"
+    },
+    {
+      "firstName": "Willow",
+      "age": 5,
+      "id": "G_nbKDH"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "apple",
+      "description": "iPhone"
+    },
+    {
+      "id": "2",
+      "name": "google",
+      "description": "search"
+    },
+    {
+      "id": "3",
+      "name": "fitbit",
+      "description": "wearable"
+    }
+  ]
+}

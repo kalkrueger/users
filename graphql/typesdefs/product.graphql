@@ -1,0 +1,13 @@
+type Product {
+    id: String!
+    title: String!
+    price: Float!
+    quantity: Int!
+}
+
+input addProduct {
+    title: String!
+    title: String!
+    price: Float!
+    quantity: Int!
+}
