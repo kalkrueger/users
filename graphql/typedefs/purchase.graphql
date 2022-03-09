@@ -3,11 +3,11 @@ type Purchase {
     userId: String!
     productId: String!
     quantity: Int!
-    price: Int!
+    price: Int
     product: [Product]
 }
 
-input addPurchase {
+input PurchaseAddInput {
     userId: String!
     productId: String!
     quantity: Int!

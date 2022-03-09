@@ -1,4 +1,4 @@
-const Purchase = require("../../../models/purchase")
+import Purchase from "../../../models/purchases.js";
 
 const purchaseQueries = {
     purchase: async(_, args) => {

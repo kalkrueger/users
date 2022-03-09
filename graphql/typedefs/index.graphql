@@ -1,0 +1,21 @@
+type Query {
+    user(id: String!): User
+
+    userPurchases(id: String!): User
+
+    product(id: String!): Product
+
+    company(id: String!): Company
+
+    purchase(id: String!): Purchase
+}
+
+type Mutation {
+    createUser(user: UserCreateInput!): User!
+
+    createCompany(company: CompanyCreateInput!): Company!
+
+    createProduct(product: ProductCreateInput!): Product!
+
+    addPurchase(purchase: PurchaseAddInput!): Purchase!
+}

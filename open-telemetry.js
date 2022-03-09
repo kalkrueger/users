@@ -1,13 +1,15 @@
 // Import required symbols
-const { HttpInstrumentation } = require ('@opentelemetry/instrumentation-http');
-const { ExpressInstrumentation } = require ('@opentelemetry/instrumentation-express');
-const { registerInstrumentations } = require('@opentelemetry/instrumentation');
-const { NodeTracerProvider } = require("@opentelemetry/node");
-const { SimpleSpanProcessor, ConsoleSpanExporter, BatchSpanProcessor } = require ("@opentelemetry/tracing");
-const { Resource } = require('@opentelemetry/resources');
-const { JaegerExporter } = require('@opentelemetry/exporter-jaeger')
-const { MongoDBInstrumentation } = require('@opentelemetry/instrumentation-mongodb');
-const { GraphQLInstrumentation } = require('@opentelemetry/instrumentation-graphql');
+import { HttpInstrumentation } from '@opentelemetry/instrumentation-http';
+import { ExpressInstrumentation } from '@opentelemetry/instrumentation-express';
+import { registerInstrumentations } from '@opentelemetry/instrumentation';
+import { NodeTracerProvider } from "@opentelemetry/node";
+import { SimpleSpanProcessor, ConsoleSpanExporter, BatchSpanProcessor } from "@opentelemetry/tracing";
+import { Resource } from '@opentelemetry/resources';
+import { JaegerExporter } from '@opentelemetry/exporter-jaeger'
+import { MongoDBInstrumentation } from '@opentelemetry/instrumentation-mongodb';
+import { GraphQLInstrumentation } from '@opentelemetry/instrumentation-graphql';
+import  opentelemetry  from '@opentelemetry/sdk-node'
+import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node'
 
 
 // Register server-related instrumentation
@@ -16,7 +18,7 @@ registerInstrumentations({
     new GraphQLInstrumentation(),
     new HttpInstrumentation(),
     new ExpressInstrumentation(),
-    new MongoDBInstrumentation()
+    new MongoDBInstrumentation(),
   ]
 });
 
@@ -42,11 +44,6 @@ provider.addSpanProcessor(
   new BatchSpanProcessor(jaegerExporter)
 );
 
-//added
-// const consoleExporter = new ConsoleSpanExporter();
-// provider.addSpanProcessor(
-//   new SimpleSpanProcessor(consoleExporter)
-// );
 
 // Register the provider to begin tracing
-provider.register();
+export default provider.register();

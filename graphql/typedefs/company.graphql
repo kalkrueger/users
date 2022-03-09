@@ -5,7 +5,7 @@ type Company {
     users: [User]
 }
 
-input addCompany {
+input CompanyCreateInput {
     name: String!
     description: String
 }

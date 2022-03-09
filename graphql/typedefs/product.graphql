@@ -5,8 +5,7 @@ type Product {
     quantity: Int!
 }
 
-input addProduct {
-    title: String!
+input ProductCreateInput {
     title: String!
     price: Float!
     quantity: Int!

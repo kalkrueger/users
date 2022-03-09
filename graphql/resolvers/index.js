@@ -1,7 +1,7 @@
-import { userQueries, userMutations } from './users';
-import { productQueries, productMutations } from './products';
-import { companyQueries, companyMutations } from './companies';
-import { purchaseQueries, purchaseMutations } from './purchases';
+import { userQueries, userMutations } from './users/index.js';
+import { productQueries, productMutations } from './products/index.js';
+import { companyQueries, companyMutations } from './companies/index.js';
+import { purchaseQueries, purchaseMutations } from './purchases/index.js';
 
 
 const resolvers = {
@@ -16,7 +16,7 @@ const resolvers = {
     ...productMutations,
     ...companyMutations,
     ...purchaseMutations,
-  },
+  }
 };
 
-export default resolvers;
+export default resolvers

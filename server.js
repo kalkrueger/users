@@ -1,12 +1,13 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const openTel = require("./open-telemetry");
-const { graphqlHTTP } = require('express-graphql');
-const schema = require('./schema/schema');
-//const schema = require('./graphql/schema')
-const mongoose = require("mongoose");
-require("dotenv").config();
+import openTel from "./open-telemetry.js";
+import  countAllRequests from './monitoring.js'
+import { graphqlHTTP } from 'express-graphql';
+import schema from './graphql/schema.js';
+import mongoose from "mongoose";
+import 'dotenv/config'
 
+app.use(countAllRequests());
 
 mongoose
   .connect(process.env.DB)

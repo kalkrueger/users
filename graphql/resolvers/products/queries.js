@@ -1,4 +1,4 @@
-const Product = require("../../../models/product")
+import Product from "../../../models/products.js";
 
 const productQueries =  {
     product: async (_, args) => {
@@ -6,4 +6,4 @@ const productQueries =  {
     }
 }
 
-export default productQueries;
+export default  productQueries;

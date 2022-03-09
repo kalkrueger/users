@@ -1,19 +1,19 @@
-const Product = require("../../../models/product")
-const Purchase = require("../../../models/purchase")
+import User from "../../../models/users.js"
+import Product from "../../../models/products.js"
+import Purchase from "../../../models/purchases.js"
+
 
 const purchaseMutations = {
-    addPurchase: async(_, { userId, productId, quantity }) => {
-        return Product.findById(productId)
+    addPurchase: async (_, { purchase }) => {
+        return Product.findById(purchase.productId)
             .then(res => {
-                let purchase = new Purchase({
-                    userId,
-                    productId,
-                    quantity,
+                let newPurchase = new Purchase({
+                    ...purchase,
                     price: res.price
                 })
-                return purchase.save()
+                return newPurchase.save()
                     .then(purchase => {
-                        User.findByIdAndUpdate(args.userId, 
+                        User.findByIdAndUpdate(purchase.userId, 
                           { $push: { purchasedProducts : purchase._id } }, 
                           {new: true} ).then()
                         return purchase
@@ -22,4 +22,4 @@ const purchaseMutations = {
     }
 }
 
-export default purchaseMutations;
+export default purchaseMutations

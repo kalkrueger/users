@@ -2,6 +2,7 @@
   "name": "users",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "json:server": "json-server --watch db.json",
@@ -14,6 +15,7 @@
   "dependencies": {
     "@graphql-tools/schema": "^8.3.2",
     "@opentelemetry/api": "^1.0.4",
+    "@opentelemetry/auto-instrumentations-node": "^0.27.4",
     "@opentelemetry/core": "^0.22.0",
     "@opentelemetry/exporter-jaeger": "^1.0.1",
     "@opentelemetry/exporter-zipkin": "^0.22.0",
@@ -22,6 +24,8 @@
     "@opentelemetry/instrumentation-http": "^0.22.0",
     "@opentelemetry/instrumentation-mongodb": "^0.29.0",
     "@opentelemetry/node": "^0.22.0",
+    "@opentelemetry/sdk-metrics-base": "^0.27.0",
+    "@opentelemetry/sdk-node": "^0.27.0",
     "axios": "^0.26.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",

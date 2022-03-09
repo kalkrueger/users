@@ -1,13 +1,9 @@
-const Product = require("../../../models/product")
+import Product from "../../../models/products.js";
 
 const productMutations = {
-    createProduct: async (_, { title, price, quantity }) => {
-        let product = new Product ({
-            title: title,
-            price: price,
-            quantity: quantity
-          })
-          return product.save()
+    createProduct: async (_, { product }) => {
+        let newProduct = new Product (product)
+        return newProduct.save()
     } 
 }
 

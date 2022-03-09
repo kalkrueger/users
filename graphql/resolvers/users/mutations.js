@@ -1,13 +1,14 @@
-const User = require("../../../models/user")
+import  User  from "../../../models/users.js"
+import Company from "../../../models/companies.js"
 
 const userMutations = {
-    createUser: async (_, args) => {
-        let user = new User ({
-            firstName: args.firstName,
-            age: args.age,
-            companyId: args.companyId
-        })
-        return user.save()
+    createUser: (_, { user }) => {
+        let newUser = new User( user );
+        return newUser.save().then(res => {
+            res.company = () => Company.findById(res.companyId)
+            console.log(res.company)
+            return res
+        }); 
     }
 }
 

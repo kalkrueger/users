@@ -1,2 +1,2 @@
-export {default as purchaseQueries} from './queries';
-export {default as purchaseMutations} from './mutations';
+export { default as purchaseQueries } from './queries.js'
+export { default as purchaseMutations } from './mutations.js'

@@ -1,4 +1,4 @@
-const Company = require("../../../models/company")
+import Company from "../../../models/companies.js";
 
 const companyQueries = {
     company: async(_, args) => {

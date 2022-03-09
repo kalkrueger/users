@@ -1,0 +1,13 @@
+type User {
+    id: String!
+    firstName: String!
+    age: Int!
+    company: Company
+    purchases: [Purchase]
+}
+
+input UserCreateInput {
+    firstName: String!
+    age: Int!
+    companyId: String!
+}

@@ -1,12 +1,9 @@
-const Company = require("../../../models/company")
+import Company from "../../../models/companies.js";
 
 const companyMutations = {
-    createCompany: async(_, { name, description }) => {
-        let company = new Company ({
-            name: name,
-            description: description,
-          })
-          return company.save()
+    createCompany: async (_, { company }) => {
+        let newCompany = new Company (company)
+        return newCompany.save()
     }
 }
 
